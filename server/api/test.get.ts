@@ -1,3 +1,3 @@
-export default defineEventHandler((event) => {
-  return useStorage().getKeys()
+export default defineEventHandler(async(event) => {
+  return await useStorage().getKeys('root:public')
 })
