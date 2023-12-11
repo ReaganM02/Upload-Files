@@ -11,6 +11,6 @@ export default defineEventHandler(async(event) => {
   // Use Promise.all to wait for all promises to resolve
   await Promise.all(uploadedPromises!);
   
-  return 200;
+  return await useStorage().getKeys('fs');
   
 })
