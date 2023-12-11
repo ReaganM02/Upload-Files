@@ -1,15 +1,17 @@
-import path from 'node:path'
-import fs from 'node:fs'
-
 export default defineEventHandler(async(event) => {
-  const files = await readMultipartFormData(event)
+  const files = await readMultipartFormData(event);
 
-  const uploadedFilePaths:string[] = []
-
-  files?.forEach((file) => {
-    const filePath = path.join(process.cwd(), 'public', file.filename as string)
-    fs.writeFileSync(filePath, file.data)
-    uploadedFilePaths.push(`/${file.filename}`)
-  })
-  return uploadedFilePaths
+  const uploadedFilePaths: string[] = [];
+  
+  // Use map instead of forEach to create an array of promises
+  const uploadedPromises = files?.map(async (file) => {
+    await useStorage().setItemRaw(`fs/${file.filename}`, file.data);
+    uploadedFilePaths.push(file.filename as string);
+  });
+  
+  // Use Promise.all to wait for all promises to resolve
+  await Promise.all(uploadedPromises!);
+  
+  return uploadedFilePaths;
+  
 })
