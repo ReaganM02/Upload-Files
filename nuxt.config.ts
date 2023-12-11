@@ -7,6 +7,10 @@ export default defineNuxtConfig({
       fs: {
         driver: 'fs',
         base: './public'
+      },
+      test: {
+        driver: 'fs',
+        base: './images'
       }
     }
   }
