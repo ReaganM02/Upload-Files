@@ -4,14 +4,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   nitro: {
     storage: {
-      fs: {
-        driver: 'fs',
-        base: './public'
-      },
       test: {
         driver: 'fs',
         base: './images'
-      }
+      },
+      fs: {
+        driver: 'fs',
+        base: './data',
+      },
     }
   }
 })
