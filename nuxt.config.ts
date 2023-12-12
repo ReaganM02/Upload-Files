@@ -4,12 +4,6 @@ export default defineNuxtConfig({
     storage: {
       fs: {
         driver: 'fs',
-        base: './_nuxt/images'
-      }
-    },
-    devStorage: {
-      fs: {
-        driver: 'fs',
         base: './images'
       },
     },
@@ -19,6 +13,11 @@ export default defineNuxtConfig({
         dir: './assets/mail',
       },
     ],
+    publicAssets: [
+      {
+        dir: './public',
+      }
+    ]
   },
   devtools: true
 });
