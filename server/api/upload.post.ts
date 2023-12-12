@@ -1,5 +1,5 @@
 export default defineEventHandler(async (event) => {
-  const data = await useStorage().getKeys('root');
+  const data = await useStorage().getItem('root:public:hello');
   return {
     data
   }
