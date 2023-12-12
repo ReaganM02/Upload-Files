@@ -4,6 +4,12 @@ export default defineNuxtConfig({
     storage: {
       fs: {
         driver: 'fs',
+        base: './_nuxt/images'
+      }
+    },
+    devStorage: {
+      fs: {
+        driver: 'fs',
         base: './images'
       }
     }
