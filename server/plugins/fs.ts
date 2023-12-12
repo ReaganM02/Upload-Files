@@ -1,7 +1,10 @@
-import fsDriver from 'unstorage/drivers/fs'
-import { createStorage } from "unstorage"
+import fileSystem from 'unstorage/drivers/fs'
 
 export default defineNitroPlugin(() => {
-  const storage = createStorage({});
-  storage.mount('driver', fsDriver({base: './public'}))
+  const storage = useStorage()
+
+  const driver = fileSystem({
+    base: './public'
+  })
+  storage.mount('fs', driver)
 })

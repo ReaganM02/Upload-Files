@@ -1,5 +1,4 @@
 export default defineEventHandler(async (event) => {
-  const query = getQuery(event)
-  // await useStorage().setItem('fs:hello', query);
+  await useStorage().setItem('fs:test', "works");
   return await useStorage().getKeys();
 });
