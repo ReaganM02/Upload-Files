@@ -1,5 +1,5 @@
 export default defineEventHandler(async (event) => {
-  const data = await useStorage().getItemRaw('fs:test.txt');
+  const data = await useStorage().getKeys('fs');
   return {
     data
   }
