@@ -4,13 +4,13 @@ export default defineNuxtConfig({
     storage: {
       fs: {
         driver: 'fs',
-        base: '.output/public'
+        base: '.output/images'
       }
     },
     devStorage: {
       fs: {
         driver: 'fs',
-        base: './public'
+        base: './images'
       }
     }
   },
