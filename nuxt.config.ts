@@ -11,7 +11,14 @@ export default defineNuxtConfig({
       fs: {
         driver: 'fs',
         base: './images'
-      }
-    }
+      },
+    },
+    serverAssets: [
+      {
+        baseName: 'mail',
+        dir: './assets/mail',
+      },
+    ],
   },
+  devtools: true
 });

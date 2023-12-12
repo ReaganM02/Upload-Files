@@ -1,3 +1,3 @@
 export default defineEventHandler(async(event) => {
-  return await useStorage().getKeys('fs');
+  return await useStorage().getKeys('assets');
 })
