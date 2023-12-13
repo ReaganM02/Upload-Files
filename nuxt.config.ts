@@ -5,14 +5,8 @@ export default defineNuxtConfig({
     storage: {
       fs: {
         driver: 'fs',
-        base: './output/public'
-      }
-    },
-    devStorage: {
-      fs: {
-        driver: 'fs',
         base: './public'
       }
-    }
+    },
   }
 });
